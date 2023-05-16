@@ -1,0 +1,46 @@
+*{
+    border:0;
+    margin:0;
+}
+
+body{
+    display:grid;
+    place-items: center;
+
+}
+
+#frame{
+    height:400px;
+    width:700px;
+    margin:auto;
+    border:1px solid black;
+}
+
+#dino{
+    height:100px;
+    width:50px;
+    background-color:red;
+    position: absolute;
+    top:300px;
+    animation : jum 2s ease-in-out;
+}
+
+#tree{
+    height:50px;
+    width:50px;
+    background-color: aqua;
+    position:absolute;
+    top:350px;
+    animation : tree-slide 6s infinite linear;
+}
+
+@keyframes tree-slide{
+    from {right:0px}
+    to {right:740px}
+}
+
+@keyframes jump{
+    30%  {top:260px}
+    50%  {top:220px}
+    70%  {top:260px}
+}
