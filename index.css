@@ -4,6 +4,7 @@
 }
 
 body{
+    height:100vh;
     display:grid;
     place-items: center;
 
@@ -14,33 +15,47 @@ body{
     width:700px;
     margin:auto;
     border:1px solid black;
+    position:absolute;
+    overflow:hidden;
 }
 
 #dino{
-    height:100px;
-    width:50px;
-    background-color:red;
-    position: absolute;
-    top:300px;
-    animation : jum 2s ease-in-out;
-}
-
-#tree{
     height:50px;
     width:50px;
-    background-color: aqua;
+    background-image: url(./images/trex.png);
+    background-size:50px;
+    position: relative   ;
+    top:355px;
+    left:100px
+}
+
+.jump-up{
+    animation : jump-up 0.5s cubic-bezier(.52,1.0 ,1,1);
+}
+.jump-down{
+    animation : jump-down 0.5s cubic-bezier(.52,1.0 ,1,1);
+}
+
+#cactus{
+    height:40px;
+    width:20px;
+    background-image: url(./images/cactus.png);
+    background-size: 25px ;
     position:absolute;
-    top:350px;
-    animation : tree-slide 6s infinite linear;
+    top:365px;
+    animation : cactus-slide 4s infinite linear;
 }
 
-@keyframes tree-slide{
-    from {right:0px}
-    to {right:740px}
+@keyframes cactus-slide{
+    from {right:-40px}
+    to {right:740px} 
 }
 
-@keyframes jump{
-    30%  {top:260px}
-    50%  {top:220px}
-    70%  {top:260px}
+@keyframes jump-up{
+    0% { top : 355px}
+    100% { top : 255px}
+}
+@keyframes jump-down{
+    0% { top : 255px}
+    100% { top : 355px}
 }
