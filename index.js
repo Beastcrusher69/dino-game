@@ -1,20 +1,22 @@
 let dinoWidth = 50;
 let cactusHeight = 40;
+let dino = document.getElementById('dino');
+let cactus =  document.getElementById('cactus');
 
 function jump(e){
 
     if(e.code == 'Space'){
 
-    document.getElementById('dino').classList.add('jump-up');
+    dino.classList.add('jump-up');
 
     setTimeout(()=>{
   
-    document.getElementById('dino').classList.add('jump-down');
+    dino.classList.add('jump-down');
     },500)
 
     setTimeout(()=>{
-    document.getElementById('dino').classList.remove('jump-up');
-    document.getElementById('dino').classList.remove('jump-down');
+    dino.classList.remove('jump-up');
+    dino.classList.remove('jump-down');
 
     },1000)
     
@@ -25,15 +27,17 @@ document.addEventListener('keydown',(event)=>{
     jump(event);
 });
 
-let dino =  document.getElementById('dino');
-let cactus =  document.getElementById('cactus');
-
-console.log("dino1>>" + dino);
-console.log("dino2>>" + document.getElementById('dino'));
-
-
-// let dinoGap = 350 - window.getComputedStyle(dino).getPropertyValue(top);
-    console.log("gcs>>" + window.getComputedStyle(document.getElementById('dino')));
 setInterval(()=>{
-    
+
+    let dinoGap = 350 - parseInt(window.getComputedStyle(dino).getPropertyValue('top'));
+    let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue('left')); 
+
+    if(dinoGap<=30 && (cactusLeft<=140 && cactusLeft>80)){
+
+        console.log(dino.style)
+
+        dino.style.backgroundImage = 'url(./images/dino-killed.jpg)';  
+        dino.style.top = window.getComputedStyle(dino).getPropertyValue('top') ;
+        cactus.style.left = window.getComputedStyle(cactus).getPropertyValue('left');
+    }
 },10)

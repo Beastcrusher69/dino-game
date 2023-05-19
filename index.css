@@ -26,14 +26,16 @@ body{
     background-size:50px;
     position: relative   ;
     top:355px;
-    left:100px
+    left:100px ;
+    z-index:2; 
+    background-color: transparent;
 }
 
 .jump-up{
-    animation : jump-up 0.5s cubic-bezier(.52,1.0 ,1,1);
+    animation : jump-up 0.51s ease-out;
 }
 .jump-down{
-    animation : jump-down 0.5s cubic-bezier(.52,1.0 ,1,1);
+    animation : jump-down 0.5s ease-out;
 }
 
 #cactus{
@@ -57,5 +59,5 @@ body{
 }
 @keyframes jump-down{
     0% { top : 255px}
-    100% { top : 355px}
+    100% { top : 355 px}
 }
