@@ -4,6 +4,7 @@
 }
 
 body{
+    width:100%;
     height:100vh;
     display:grid;
     place-items: center;
@@ -60,4 +61,25 @@ body{
 @keyframes jump-down{
     0% { top : 255px}
     100% { top : 355 px}
+}
+
+#game-over-div{
+    z-index:3;
+    width:300px;
+    height:150px;
+    background-color:whitesmoke;
+    flex-direction : column;
+    align-items:center;
+    display:none;
+}
+
+#game-over-img{
+    background-image: url(./images/game-over.png);
+    background-size : 100%;
+    height : 80px;
+    width:100px;
+}
+button{
+    width : 100px;
+    height: 50px;
 }
