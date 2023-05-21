@@ -39,14 +39,17 @@ body{
     animation : jump-down 0.5s ease-out;
 }
 
-#cactus{
+.cactus{
     height:40px;
     width:20px;
     background-image: url(./images/cactus.png);
     background-size: 25px ;
     position:absolute;
     top:365px;
-    animation : cactus-slide 4s infinite linear;
+}
+
+.cactus-animation{
+    animation : cactus-slide 4s 1 linear;
 }
 
 @keyframes cactus-slide{
