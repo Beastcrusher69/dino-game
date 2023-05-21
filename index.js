@@ -6,7 +6,7 @@ let gameOver = document.getElementById('game-over-div');
 
 function jump(e){
 
-    if(e.code == 'Space'){
+    if(e.code == 'Space' && gameOver.style.display == 'none'){
 
     dino.classList.add('jump-up');
 

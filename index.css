@@ -70,16 +70,32 @@ body{
     background-color:whitesmoke;
     flex-direction : column;
     align-items:center;
-    display:none;
 }
 
 #game-over-img{
     background-image: url(./images/game-over.png);
     background-size : 100%;
-    height : 80px;
+    height :70px;
     width:100px;
+    border-radius: 5px;
 }
-button{
-    width : 100px;
-    height: 50px;
+a{
+    width : 45px;
+    height: 35px;
+    padding-top: 10px;
+    display : inline-flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:25px;
+    border-radius: 3px;
+
+}
+
+a:hover{
+    background-color:white;
+    cursor:pointer;
+}
+
+#retry{
+    width:35px;
 }
