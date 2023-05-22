@@ -61,26 +61,35 @@ function refresh(){
     window.location.reload();
 }
 
-let randomTO;
 let interval = 1000;
 let i = 0;
+var rand;
 
-setInterval(() => {
-    console.log(interval);
+(function loop() {
+    rand = 4000 * Math.random();
+    setTimeout(function() {
+            doSomething();
+            loop();  
+    }, rand);
+}());
+    
+function doSomething(){
+   console.log(rand);
 
 
-    cactus[i].classList.add('cactus-animation');
-    setTimeout(()=>{
-     cactus[i].classList.remove('cactus-animation'); 
-    },4000)
+   
+   setTimeout(() => {
+   cactus[i].classList.remove('cactus-animation');
+    
+   }, 100);
+   cactus[i].classList.add('cactus-animation');
 
-    interval = 3000 * Math.random();
-    if(i==3){
+   if(i==3){
         i=0;
     }
     else{
     i++; 
     }
-}, interval);
     
+}
    
