@@ -4,6 +4,8 @@ let dino = document.getElementById('dino');
 let cactus =  document.getElementsByClassName('cactus');
 let gameOver = document.getElementById('game-over-div');
 
+
+console.log(cactus);
 function jump(e){
 
     if(e.code == 'Space' && gameOver.style.display == 'none'){
@@ -59,22 +61,26 @@ function refresh(){
     window.location.reload();
 }
 
-let i=0;
 let randomTO;
-while(i<10){
+let interval = 1000;
+let i = 0;
 
-    randomTO = 2000 * Math.random();
+setInterval(() => {
+    console.log(interval);
 
+
+    cactus[i].classList.add('cactus-animation');
     setTimeout(()=>{
+     cactus[i].classList.remove('cactus-animation'); 
+    },4000)
 
-        document.getElementById('cactus'+i).classList.remove('cactus-animation');
-
-        document.getElementById('cactus'+i).classList.add('cactus-animation');
-    }
-        ,randomTO)
-
-    i=i+1;
-    if(i==4){
+    interval = 3000 * Math.random();
+    if(i==3){
         i=0;
     }
-}
+    else{
+    i++; 
+    }
+}, interval);
+    
+   

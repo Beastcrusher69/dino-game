@@ -45,6 +45,7 @@ body{
     background-image: url(./images/cactus.png);
     background-size: 25px ;
     position:absolute;
+    right :-40px;
     top:365px;
 }
 
@@ -63,7 +64,7 @@ body{
 }
 @keyframes jump-down{
     0% { top : 255px}
-    100% { top : 355 px}
+    100% { top : 355px}
 }
 
 #game-over-div{
